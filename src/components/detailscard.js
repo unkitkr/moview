@@ -6,7 +6,7 @@ const axios = require('axios');
 function DetailsCard(props) {
     const history = useHistory();
     function deleteMovie(){
-                axios.get(`http://127.0.0.1:8000/deletemovie/${props.id}` )
+                axios.get(`https://moviewr.herokuapp.com/deletemovie/${props.id}` )
         .then(function (response) {
             // handle success
             history.push("/");

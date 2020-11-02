@@ -12,7 +12,7 @@ function EditCard(props) {
         const genre = editform.current["mGenre"].value;
         const date = editform.current["mDate"].value;
         console.log(name)
-        axios.post(`http://127.0.0.1:8000/updatemovie`, { "id" : props.id, "genre": genre, "datereleased":date,"title":name })
+        axios.post(`https://moviewr.herokuapp.com/updatemovie`, { "id" : props.id, "genre": genre, "datereleased":date,"title":name })
         .then(function (response) {
             console.log(response)
             history.push(`/getdetails/${props.id}`);

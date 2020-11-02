@@ -10,7 +10,7 @@ function MoviesDetails (match) {
     const [items, setItems] = useState([])
     const fetchMovies = async () => {
 
-        const data = await fetch(`http://localhost:8000/getdetails/${id}`,{
+        const data = await fetch(`https://moviewr.herokuapp.com/getdetails/${id}`,{
             method: 'GET',
         });
         const items = await data.json()

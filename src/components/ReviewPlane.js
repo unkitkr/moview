@@ -12,7 +12,7 @@ function ReviewPlane() {
     const [items, setItems] = useState([])
     const fetchMovies = async () => {
 
-        const data = await fetch("http://localhost:8000/getall",{
+        const data = await fetch("https://moviewr.herokuapp.com/getall",{
             method: 'GET',
         });
         const items = await data.json()

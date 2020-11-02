@@ -8,7 +8,7 @@ function ReviewSubCard(props) {
     const history = useHistory();
     function updateRatingMovie(){
         const upRate = rate.current.value;
-        axios.put(`http://127.0.0.1:8000/updaterating/${props.id}/${upRate}`)
+        axios.put(`https://moviewr.herokuapp.com/updaterating/${props.id}/${upRate}`)
         .then(function (response) {
             // handle success
             history.push(`/getdetails/${props.id}`);
