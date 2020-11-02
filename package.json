@@ -1,0 +1,26 @@
+{
+  "name": "moview",
+  "version": "1.0.0",
+  "description": "A sample project for SurveySparrow induction",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app"
+  },
+  "keywords": [
+    "movies",
+    "reviews",
+    "entertainment"
+  ],
+  "author": "Ankit Kumar",
+  "license": "ISC",
+  "dependencies": {
+    "@hapi/hapi": "^20.0.1",
+    "@hapi/inert": "^6.0.3",
+    "@hapi/joi": "^17.1.1",
+    "@hapi/vision": "^6.0.1",
+    "ejs": "^3.1.5",
+    "pg": "^8.4.1",
+    "sequelize": "^6.3.5"
+  }
+}
