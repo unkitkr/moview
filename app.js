@@ -10,7 +10,7 @@ const init = async () => {
   // Setting up the server
   const server = Hapi.server({
     port:  process.env.PORT || 8080,
-    host: "localhost",
+    host: "0.0.0.0",
     routes: {
       files: {
         relativeTo: Path.join(__dirname, "public"),
