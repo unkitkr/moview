@@ -9,7 +9,7 @@ const { title } = require("process");
 const init = async () => {
   // Setting up the server
   const server = Hapi.server({
-    port: 8000,
+    port:  process.env.PORT || 8080,
     host: "localhost",
     routes: {
       files: {
@@ -51,7 +51,7 @@ const init = async () => {
     method: "GET",
     path: "/",
     handler: (request, reply) => {
-      return reply.file("templates/index.html");
+      return ("I'm up");
     },
   });
 
