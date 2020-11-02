@@ -39,7 +39,7 @@ const Movies = sequelize.define('Movies', {
     freezeTableName: true,
   });
 
-// Movies.sync()
+Movies.sync()
 
 module.exports = {
     Movies
