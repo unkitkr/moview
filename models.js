@@ -1,6 +1,6 @@
 const { Sequelize, DataTypes  } = require('sequelize');
 
-const sequelize = new Sequelize('postgresql://postgres:SudoAdmin123@localhost/moview')
+const sequelize = new Sequelize('postgres://imtdvxjggtuylc:d6cfd98043eb5e61fcd3dfb6310a16afdbb871fb9b0c74f3104457503dcc0f56@ec2-34-200-106-49.compute-1.amazonaws.com:5432/dbqspn2l5crosf')
 
 
 const Movies = sequelize.define('Movies', {
