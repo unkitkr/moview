@@ -2,12 +2,9 @@ import {actGetAllMovies} from './actions'
 import axios from "axios";
 
 export default function reducer(state = [], action) {
-
+    console.log(action)
   if(action.type === "GET_ALL_MOVIES"){
-    return [
-        ...state,
-        action.payload,
-    ]
+    return action.payload
   }
 
   if (action.type === "ADD_MOVIES") {
@@ -48,22 +45,41 @@ export default function reducer(state = [], action) {
      
 // }
 
-// export async function fetchAllMovies(dispatch, getState) {
-//     return dispatch => {
+// export function fetchAllMovies(dispatch, getState) {
 //         const response = fetch("https://moviewr.herokuapp.com/getall",{method: 'GET',}).then(res => {
 //             res.json().then(resp => {
-//                 dispatch(actGetAllMovies(resp))
+//                 dispatch({
+//                     type : "GET_ALL_MOVIES",
+//                     payload: response.data,
+//                 })
 //             })
-//         })
-//     }
-    
-    
+//         })  
 // }
 
-export function fetchAllMovies(){
-    return(dispatch)=>{
-        return axios.get("https://moviewr.herokuapp.com/getall").then((response)=>{
-            dispatch(actGetAllMovies(response.data));
-        })
-    }
-}
+
+export const fetchAllMovies = () => dispatch => {
+    console.log("ferdff")
+    fetch("https://moviewr.herokuapp.com/getall",{method: 'GET',}).then(res => {
+            res.json().then(resp => {
+                dispatch({
+                    type : "GET_ALL_MOVIES",
+                    payload: resp,
+                })
+            })
+        })  
+  };
+//   export const fetchPosts = () => {
+//       console.log("Party")
+//   }
+
+// export function fetchAllMovies(){
+//     console.log("fettching")
+//     return (dispatch)=>{
+//         return axios.get("https://moviewr.herokuapp.com/getall").then((response)=>{
+//             dispatch({
+//                 type : "GET_ALL_MOVIES",
+//                 payload: response.data,
+//             });
+//         })
+//     }
+// }

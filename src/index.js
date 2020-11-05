@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import {Provider} from 'react-redux'
 import './index.css';
-import {App} from './components/App'
+import App from './components/App'
 import store from "./components/Redux/Store"
 import {actAddMovies,actDeleteMovies,actEditMovies,actGetAllMovies}from './components/Redux/actions'
 import {fetchAllMovies} from './components/Redux/reducer'

@@ -1,15 +1,17 @@
 import React, { useState, useEffect } from "react";
 import ReviewCard from "./ReviewCard";
 import AddMovies from './AddMovies'
-import {useSelector,useDispatch} from 'react-redux'
+import {connect} from 'react-redux'
 import {actAddMovies,actDeleteMovies,actEditMovies,actGetAllMovies} from './Redux/actions'
-import store from './Redux/Store'
+import {fetchAllMovies} from './Redux/reducer'
 import "./components.css";
 
-function ReviewPlane() {
+function ReviewPlane(props) {
+
     
     useEffect(() => {
-        fetchMovies();
+        // fetchMovies();
+        props.fetchAllMovies();
     },[])
 
     const [items, setItems] = useState([])
@@ -27,12 +29,19 @@ function ReviewPlane() {
         <div className="container review-plane">
             <div className="row">
             <AddMovies/>
-             {items.map(items => (
-                 <ReviewCard key = {items.id} name = {items.title} linkid = {items.id} genre = {items.genre} rating = {items.rating} releasedon = {items.dateReleased} />
-             ))}
+            {props.items.map(item => (
+                <ReviewCard key = {item.id} name = {item.title} linkid = {item.id} genre = {item.genre} rating = {item.rating} releasedon = {item.dateReleased} />
+            ))}
             </div>
         </div>
     );
 }
 
-export default ReviewPlane;
+
+const mapStateToProps = state => {
+    const items = state;
+    console.log(items)
+    return {items};
+};   
+
+export default connect(mapStateToProps, {fetchAllMovies})(ReviewPlane)
